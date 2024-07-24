@@ -19,7 +19,7 @@ botonComprobar.addEventListener("click",function () {
              let resultado= "Estas registrado, ya puedes acceder a tu cuenta!"
              textoH1.innerHTML=resultado;
              setTimeout(() => {
-                location.href="registro.html"
+                location.href="tareas.html"
              }, 3000);
 
              break;

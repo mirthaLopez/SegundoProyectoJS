@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador de proyectos</title>
+    <link rel="stylesheet" href="src/css/tareas.css">
+</head>
+<body>
+    <h1>Panel de tareas y eventos</h1>
+    <h3>Crea una nueva tarea o evento</h3>
+    <p>Tarea o Evento</p>
+    <input type="text" id="TareaEvento">
+    <p> Fecha o Prioridad</p>
+    <input type="text" id="fechaPrioridad"> <br> <br>
+    <select name="Seleccione" id="selector">
+        <option value="opcion">Opciones</option>
+        <option value="tarea">Tarea</option>
+        <option value="evento">evento</option>
+    </select>
+    <h2 id="textAdvert"></h2>
+    <button id="botonCrear">Crear</button>
+
+    <br>
+    <br>
+
+<div class="contenedor">
+    <div id="contenedorTareas"></div>
+    <div id="contenedorEventos"></div>
+</div>
+
+
+   <script src="src/js/tareas.js"></script> 
+</body>
+</html>
