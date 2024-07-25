@@ -2,3 +2,8 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
+
+.contenedorLista{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}

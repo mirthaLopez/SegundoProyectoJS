@@ -21,10 +21,12 @@ botonCrear.addEventListener("click", function () {
 
         let list = document.createElement("div") //permite crear div que almacena una lista y varios botones cada vez que se ejecuta el evento
         contenedorTareas.appendChild(list); //permite que las etiquetas li creadas automaticamente se muestre dentro del contenedor
+        list.className="contenedorLista"
 
         /// creamos etiquetas li donde se almacena cada tarea
         let task = document.createElement("li") // crea una etiqueta li donde luego se almacena cada tarea
         list.appendChild(task)
+    
         task.innerHTML = tareaFecha; //muestra el valor almacenado en tareaFecha en formato de lista (list=una nueva etiqueta li)
         /// Crea un boton Eliminar
         let btnEliminar = document.createElement("button") // esta variable me permite crear un boton cada vez que se ejecuta el evento
@@ -32,7 +34,9 @@ botonCrear.addEventListener("click", function () {
         list.appendChild(btnEliminar); //btn eliminar es hijo de la etiqueta list
         //Creo un evento para el boton Eliminar
         btnEliminar.addEventListener("click", function () {
-            list.remove() // elimina la etiqueta list creada anteriormente
+            const listaActualizada = listaTareas.filter(tarea => tarea != task.textContent);
+            localStorage.setItem("listaTareas", JSON.stringify(listaActualizada) )
+            list.remove()
         })
         // Creo un input para Editar
         let inputEdit=document.createElement("input")
@@ -42,10 +46,21 @@ botonCrear.addEventListener("click", function () {
         btnEditar.innerHTML="Editar tarea"
         list.appendChild(btnEditar) /// cada etiqueta li va a tener un boton editar
         //Creo un evento para el boton Editar
-        btnEditar.addEventListener("click", function () {
-            task.innerHTML=inputEdit.value;
-        })
 
+        btnEditar.addEventListener("click", function () {
+           for (let index = 0; index < listaTareas.length; index++) {
+             if ( listaTareas[index]=== task.textContent) {
+                listaTareas[index]=inputEdit.value
+                console.log(listaTareas[index]);
+             }
+           }
+
+           let listaActualizada=listaTareas.filter(tarea => tarea != task.innerHTML)
+           localStorage.setItem("listaTareas", JSON.stringify(listaActualizada) )
+           task.innerHTML=inputEdit.value;
+
+        })
+        
     } else if (selector.value == "evento") {
         let eventoPrioridad = TareaEvento.value + " " + fechaPrioridad.value
         listaEventos.push(eventoPrioridad)
@@ -53,6 +68,7 @@ botonCrear.addEventListener("click", function () {
 
         let list = document.createElement("div") //permite crear div que almacena una lista y varios botones cada vez que se ejecuta el evento
         contenedorEventos.appendChild(list); //permite que las etiquetas li creadas automaticamente se muestre dentro del contenedor
+        list.className="contenedorLista"
 
         /// creamos etiquetas li donde se almacena cada tarea
         let event = document.createElement("li") // crea una etiqueta li donde luego se almacena cada tarea
@@ -64,7 +80,9 @@ botonCrear.addEventListener("click", function () {
         list.appendChild(btnEliminar); //btn eliminar es hijo de la etiqueta list
         //Creo un evento para el boton Eliminar
         btnEliminar.addEventListener("click", function () {
-            list.remove() // elimina la etiqueta list creada anteriormente
+            const listaActualizada = listaEventos.filter(evento => evento != event.textContent);
+            localStorage.setItem("listaEventos", JSON.stringify(listaActualizada) )
+            list.remove()
         })
         // Creo un input para Editar
         let inputEdit=document.createElement("input")
@@ -90,6 +108,7 @@ function traerLocalT() {
         listaTareas[index] = listaPrevTareas[index]
         let list = document.createElement("div") //permite crear div que almacena una lista y varios botones cada vez que se ejecuta el evento
         contenedorTareas.appendChild(list); //permite que las etiquetas li creadas automaticamente se muestre dentro del contenedor
+        list.className="contenedorLista"
 
         /// creamos etiquetas li donde se almacena cada tarea
         let task = document.createElement("li") // crea una etiqueta li donde luego se almacena cada tarea
@@ -101,7 +120,9 @@ function traerLocalT() {
         list.appendChild(btnEliminar); //btn eliminar es hijo de la etiqueta list
         //Creo un evento para el boton Eliminar
         btnEliminar.addEventListener("click", function () {
-            list.remove() // elimina la etiqueta list creada anteriormente
+            const listaActualizada = listaTareas.filter(tarea => tarea != task.textContent);
+            localStorage.setItem("listaTareas", JSON.stringify(listaActualizada) )
+            list.remove()
         })
         // Creo un input para Editar
         let inputEdit=document.createElement("input")
@@ -124,7 +145,7 @@ function traerLocalE() {
         listaEventos[index] = listaPrevEvents[index]
         let list = document.createElement("div") //permite crear div que almacena una lista y varios botones cada vez que se ejecuta el evento
         contenedorEventos.appendChild(list); //permite que las etiquetas li creadas automaticamente se muestre dentro del contenedor
-
+        list.className="contenedorLista"
         /// creamos etiquetas li donde se almacena cada tarea
         let event = document.createElement("li") // crea una etiqueta li donde luego se almacena cada tarea
         list.appendChild(event)
@@ -135,7 +156,9 @@ function traerLocalE() {
         list.appendChild(btnEliminar); //btn eliminar es hijo de la etiqueta list
         //Creo un evento para el boton Eliminar
         btnEliminar.addEventListener("click", function () {
-            list.remove() // elimina la etiqueta list creada anteriormente
+            const listaActualizada = listaEventos.filter(tarea => tarea != event.textContent);
+            localStorage.setItem("listaEventos", JSON.stringify(listaActualizada) )
+            list.remove()
         })
         // Creo un input para Editar
         let inputEdit=document.createElement("input")
@@ -147,6 +170,7 @@ function traerLocalE() {
         //Creo un evento para el boton Editar
         btnEditar.addEventListener("click", function () {
             event.innerHTML=inputEdit.value;
+            localStorage.setItem("listaTareas", JSON.stringify(event))
         })
     }
 }
