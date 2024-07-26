@@ -1,9 +1,25 @@
+body{
+    font-family: Fira Sans, sans-serif;
+    background-attachment: fixed;
+    background-image: -webkit-linear-gradient(45deg, #f7f2eb, #dfdae8);
+}
+
+header {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: whitesmoke;
+    height: 120px;
+}
+
+
 .contenedor{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+
 }
 
 .contenedorLista{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 3fr 1fr 1fr 1fr;
 }

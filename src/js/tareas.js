@@ -48,12 +48,20 @@ botonCrear.addEventListener("click", function () {
 
             const listaActualizada = valores.filter(tarea => tarea != task.textContent);
            
-
             console.log("ESTA ES LA LISTA ACTUALIZADA",listaActualizada);
             list.remove()
             localStorage.setItem("listaTareas", JSON.stringify(listaActualizada))
-        
+
+            console.log(listaActualizada);
+            location.reload()
         })
+        let taskList=JSON.parse(localStorage.getItem("listaTareas"))||[]
+
+            if (taskList.length===0){
+                localStorage.removeItem("listaTareas")
+            }
+
+
         // Creo un input para Editar
         let inputEdit = document.createElement("input")
         list.appendChild(inputEdit);
@@ -64,16 +72,22 @@ botonCrear.addEventListener("click", function () {
         //Creo un evento para el boton Editar
 
         btnEditar.addEventListener("click", function () {
-            for (let index = 0; index < listaTareas.length; index++) {
-                if (listaTareas[index] === task.textContent) {
-                    listaTareas[index] = inputEdit.value
-                    console.log(listaTareas[index]);
+            let valores = JSON.parse(localStorage.getItem("listaTareas"))||[] ///para que se comporte como un array
+            for (let index = 0; index < valores.length; index++) {
+                console.log(valores[index]);
+                console.log(task.textContent);
+                if (valores[index] === task.textContent) {
+                    valores[index] = inputEdit.value
+                    console.log(valores[index]);
                 }
             }
 
-            let listaActualizada = listaTareas.filter(tarea => tarea != task.innerHTML)
-            localStorage.setItem("listaTareas", JSON.stringify(listaActualizada))
+            let listaAct = valores.filter(tarea => tarea != task.innerHTML)
+            console.log(listaAct);
+            localStorage.setItem("listaTareas", JSON.stringify(listaAct))
+            console.log(listaTareas);
             task.innerHTML = inputEdit.value;
+            location.reload()
 
         })
         }
@@ -107,6 +121,7 @@ botonCrear.addEventListener("click", function () {
                 const listaActualizada = listaEventos.filter(evento => evento != event.textContent);
                 localStorage.setItem("listaEventos", JSON.stringify(listaActualizada))
                 list.remove()
+
             })
             // Creo un input para Editar
             let inputEdit = document.createElement("input")
@@ -138,7 +153,6 @@ botonCrear.addEventListener("click", function () {
 
 function traerLocalT() {
     listaPrevTareas = JSON.parse(localStorage.getItem("listaTareas"))
-    console.log(listaPrevTareas);
     // una vez traidos los datos desde el local storage necesito mostrar estos datos en el mismo formato en que estaban inicialmente
     for (let index = 0; index < listaPrevTareas.length; index++) {
         listaTareas[index] = listaPrevTareas[index]
@@ -169,8 +183,14 @@ function traerLocalT() {
              console.log("ESTA ES LA LISTA ACTUALIZADA",listaActualizada);
              list.remove()
              localStorage.setItem("listaTareas", JSON.stringify(listaActualizada))
-         
+             location.reload()
          })
+         let taskList=JSON.parse(localStorage.getItem("listaTareas"))||[]
+
+             if (taskList.length===0){
+                 localStorage.removeItem("listaTareas")
+             }
+
         // Creo un input para Editar
         let inputEdit = document.createElement("input")
         list.appendChild(inputEdit);
@@ -190,6 +210,7 @@ function traerLocalT() {
             let listaActualizada = listaTareas.filter(tarea => tarea != task.innerHTML)
             localStorage.setItem("listaTareas", JSON.stringify(listaActualizada))
             task.innerHTML = inputEdit.value;
+            location.reload()
         })
 
     }
