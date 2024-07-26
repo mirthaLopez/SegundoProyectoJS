@@ -11,7 +11,10 @@ header {
     background-color: whitesmoke;
     height: 120px;
 }
-
+.textoEncabezado{
+    color: rgb(125, 139, 122);
+    text-align: center;
+}
 
 .contenedor{
     display: grid;
@@ -22,4 +25,9 @@ header {
 .contenedorLista{
     display: grid;
     grid-template-columns: 3fr 1fr 1fr 1fr;
+}
+
+.contenedorCrear{
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr 1fr;
 }

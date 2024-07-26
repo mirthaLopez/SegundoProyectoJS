@@ -2,7 +2,6 @@ const TareaEvento = document.getElementById("TareaEvento")
 const fechaPrioridad = document.getElementById("fechaPrioridad")
 const selector = document.getElementById("selector")
 const botonCrear = document.getElementById("botonCrear")
-const textAdvert = document.getElementById("textAdvert")
 const contenedorTareas = document.getElementById("contenedorTareas")
 let listaPrevTareas = [];
 let listaPrevEvents = [];

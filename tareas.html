@@ -1,47 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrador de proyectos</title>
     <link rel="stylesheet" href="src/css/tareas.css">
 </head>
+
 <body>
     <header>
         <div>
-            <a href="https://www.creativelightscr.com/" target="_blank"><img src="src/img/Creative Lights.webp" alt="logo"></a>
+            <a href="https://www.creativelightscr.com/" target="_blank"><img src="src/img/Creative Lights.webp"
+                    alt="logo"></a>
         </div>
-     </header>
+    </header>
 
 
-    <h1>Agenda de tareas y eventos</h1>
+    <h1 class="textoEncabezado">Agenda de tareas y eventos</h1>
     <br>
-    <h3>Crea una nueva tarea o evento</h3>
-    <p>Tarea o Evento</p>
-    <input type="text" id="TareaEvento">
-    <p> Fecha o Prioridad</p>
-    <input type="text" id="fechaPrioridad"> <br> <br>
-    <select name="Seleccione" id="selector">
-        <option value="opcion">Opciones</option>
-        <option value="tarea">Tarea</option>
-        <option value="evento">evento</option>
-    </select>
-    <h2 id="textAdvert"></h2>
-    <button id="botonCrear">Crear</button>
+    <h3>Crea una nueva tarea o evento</h3> <br>
 
-    <br>
-    <br>
+    <div class="contenedorCrear">
+        <div>
+            <input type="text" id="TareaEvento">
+            <p>Tarea o Evento</p>
+            
+        </div>
+        <div>
+            <input type="text" id="fechaPrioridad">
+            <p> Fecha o Prioridad</p>
+        </div>
+        <div>
+            <select name="Seleccione" id="selector">
+                <option value="opcion">Opciones</option>
+                <option value="tarea">Tarea</option>
+                <option value="evento">evento</option>
+            </select>
+        </div>
+        <div>
+            <button id="botonCrear">Crear</button>
 
-<div class="contenedor">
-    <div id="contenedorTareas">
-        <h1>Tareas</h1>
+        </div>
     </div>
-    <div id="contenedorEventos">
-        <h1>Eventos</h1>
+
+    <br>
+    <br>
+
+    <div class="contenedor">
+        <div id="contenedorTareas">
+            <h1 class="textoEncabezado">Tareas</h1>
+        </div>
+        <div id="contenedorEventos">
+            <h1 class="textoEncabezado">Eventos</h1>
+        </div>
     </div>
-</div>
 
 
-   <script src="src/js/tareas.js"></script> 
+    <script src="src/js/tareas.js"></script>
 </body>
+
 </html>
