@@ -22,23 +22,23 @@
     <h3>Crea una nueva tarea o evento</h3> <br>
 
     <div class="contenedorCrear">
-        <div>
+        <div class="entrada">
             <input type="text" id="TareaEvento">
             <p>Tarea o Evento</p>
             
         </div>
-        <div>
+        <div class="entrada">
             <input type="text" id="fechaPrioridad">
             <p> Fecha o Prioridad</p>
         </div>
-        <div>
+        <div class="entrada">
             <select name="Seleccione" id="selector">
                 <option value="opcion">Opciones</option>
                 <option value="tarea">Tarea</option>
                 <option value="evento">evento</option>
             </select>
         </div>
-        <div>
+        <div class="entrada">
             <button id="botonCrear">Crear</button>
 
         </div>
@@ -48,10 +48,10 @@
     <br>
 
     <div class="contenedor">
-        <div id="contenedorTareas">
+        <div id="contenedorTareas" class="lista">
             <h1 class="textoEncabezado">Tareas</h1>
         </div>
-        <div id="contenedorEventos">
+        <div id="contenedorEventos" class="lista">
             <h1 class="textoEncabezado">Eventos</h1>
         </div>
     </div>

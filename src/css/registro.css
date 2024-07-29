@@ -7,14 +7,15 @@ header {
 }
 
 .contenedorRegistro {
+    container-type: inline-size;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 2fr 1fr;
     background-attachment: fixed;
     background-image: -webkit-linear-gradient(45deg, #f7f2eb, #dedde1);
-    
-
 }
+
+
 
 .tamanoFoto {
     width: 100%;

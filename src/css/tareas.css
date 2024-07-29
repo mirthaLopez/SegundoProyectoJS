@@ -1,3 +1,10 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+
 body{
     font-family: Fira Sans, sans-serif;
     background-attachment: fixed;
@@ -5,29 +12,41 @@ body{
 }
 
 header {
-    width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     background-color: whitesmoke;
     height: 120px;
 }
+
 .textoEncabezado{
     color: rgb(125, 139, 122);
     text-align: center;
 }
 
+.contenedorCrear{
+    container-type: inline-size;
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr 1fr;
+}
+
 .contenedor{
+    container-type: inline-size; /*media queries: definimos contenedor*/
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
 
+@container (max-width:600px){ 
+    .lista{
+        grid-column: 1/-1; /* cuando la pantalla tiene menos de 600px entonces se hacen 2 filas*/
+    }
+    .entrada{
+        grid-column: 1/-1;
+    }
 }
 
 .contenedorLista{
     display: grid;
-    grid-template-columns: 3fr 1fr 1fr 1fr;
+    grid-template-columns: 4fr 1fr 1fr 1fr;
 }
 
-.contenedorCrear{
-    display: grid;
-    grid-template-columns: 3fr 2fr 1fr 1fr;
-}
