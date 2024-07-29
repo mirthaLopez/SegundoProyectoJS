@@ -16,6 +16,8 @@ botonComprobar.addEventListener("click",function () {
         console.log(listaUsuario[index].contraseña,listaUsuario[index].correo);
      
         if ( incluyeContraseña==true && incluyeCorreo==true) {
+            let name=listaUsuario[index].nombre;
+             localStorage.setItem("name", name);
              let resultado= "Estas registrado, ya puedes acceder a tu cuenta!"
              textoH1.innerHTML=resultado;
              setTimeout(() => {
