@@ -50,3 +50,6 @@ header {
     grid-template-columns: 4fr 1fr 1fr 1fr;
 }
 
+#textAdvert{
+    color: red;
+}

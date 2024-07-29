@@ -3,14 +3,11 @@ const fechaPrioridad = document.getElementById("fechaPrioridad")
 const selector = document.getElementById("selector")
 const botonCrear = document.getElementById("botonCrear")
 const contenedorTareas = document.getElementById("contenedorTareas")
-let listaPrevTareas = [];
-let listaPrevEvents = [];
-listaPrevEvents = JSON.parse(localStorage.getItem("listaEventos"))
+const textAdvert=document.getElementById("textAdvert");
 let listaTareas = [];
 let listaEventos = [];
 
 botonCrear.addEventListener("click", function () {
-
 
     if (selector.value == "tarea") {
         let validador = TareaEvento.value.trim();
@@ -54,12 +51,6 @@ botonCrear.addEventListener("click", function () {
             console.log(listaActualizada);
             location.reload()
         })
-        let taskList=JSON.parse(localStorage.getItem("listaTareas"))||[]
-
-            if (taskList.length===0){
-                localStorage.removeItem("listaTareas")
-            }
-
 
         // Creo un input para Editar
         let inputEdit = document.createElement("input")
@@ -120,6 +111,8 @@ botonCrear.addEventListener("click", function () {
                 const listaActualizada = listaEventos.filter(evento => evento != event.textContent);
                 localStorage.setItem("listaEventos", JSON.stringify(listaActualizada))
                 list.remove()
+                location.reload()
+
 
             })
             // Creo un input para Editar
@@ -151,7 +144,7 @@ botonCrear.addEventListener("click", function () {
 })
 
 function traerLocalT() {
-    listaPrevTareas = JSON.parse(localStorage.getItem("listaTareas"))
+     let listaPrevTareas = JSON.parse(localStorage.getItem("listaTareas"))||[];
     // una vez traidos los datos desde el local storage necesito mostrar estos datos en el mismo formato en que estaban inicialmente
     for (let index = 0; index < listaPrevTareas.length; index++) {
         listaTareas[index] = listaPrevTareas[index]
@@ -217,6 +210,7 @@ function traerLocalT() {
 
 
 function traerLocalE() {
+    let listaPrevEvents = JSON.parse(localStorage.getItem("listaEventos"))||[];
     for (let index = 0; index < listaPrevEvents.length; index++) {
         listaEventos[index] = listaPrevEvents[index]
         let list = document.createElement("div") //permite crear div que almacena una lista y varios botones cada vez que se ejecuta el evento
