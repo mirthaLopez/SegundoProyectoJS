@@ -95,7 +95,7 @@ header {
         grid-template-columns: repeat(2, 1fr);
     }
     .contenedor{
-        min-height: fit-content;
+        min-height: 300px;
         min-width: fit-content;
     }
 }
