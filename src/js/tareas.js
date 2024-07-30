@@ -5,13 +5,13 @@ const botonCrear = document.getElementById("botonCrear")
 const contenedorTareas = document.getElementById("contenedorTareas")
 const contenedorEventos = document.getElementById("contenedorEventos")
 const textAdvert = document.getElementById("textAdvert");
-const contadorTask= document.getElementById("contadorT")
-const contadorEvento=document.getElementById("contadorE")
-const userName=document.getElementById("userName");
-let nombreUser=localStorage.getItem("name");
-userName.innerHTML=nombreUser;
+const contadorTask = document.getElementById("contadorT")
+const contadorEvento = document.getElementById("contadorE")
+const userName = document.getElementById("userName");
+let nombreUser = localStorage.getItem("name");
+userName.innerHTML = nombreUser;
 let contadorT = 0;
-let contadorE=0;
+let contadorE = 0;
 let listaTareas = [];
 let listaEventos = [];
 
@@ -26,7 +26,7 @@ botonCrear.addEventListener("click", function () {
         } else {
             contadorT++;
             if (contadorT != 0) {
-                contadorTask.innerHTML="Pendientes "+ +contadorT;
+                contadorTask.innerHTML = "Pendientes " + +contadorT;
             }
             let tareaFecha = TareaEvento.value + " " + fechaPrioridad.value; //concatena los valores
             listaTareas.push(tareaFecha) //envia los datos a una lista
@@ -41,9 +41,9 @@ botonCrear.addEventListener("click", function () {
             list.appendChild(task)
             task.innerHTML = tareaFecha; //muestra el valor almacenado en tareaFecha en formato de lista (list=una nueva etiqueta li)
             /// Crea un boton Eliminar
-            let btnEliminar = document.createElement("button") // esta variable me permite crear un boton cada vez que se ejecuta el evento
-            btnEliminar.innerHTML = "Eliminar" // muestra el boton con su nombre
-            btnEliminar.className="btnEliminar"
+            let btnEliminar = document.createElement("div") // esta variable me permite crear un boton cada vez que se ejecuta el evento
+            btnEliminar.innerHTML=`<img class="papelera" src="src/img/papelera.webp">`;
+            btnEliminar.className = "btnEliminar"
             list.appendChild(btnEliminar); //btn eliminar es hijo de la etiqueta list
             //Creo un evento para el boton Eliminar
             btnEliminar.addEventListener("click", function () {
@@ -56,15 +56,11 @@ botonCrear.addEventListener("click", function () {
             })
 
             // Creo un input para Editar
-            let container=document.createElement("div")
-            let inputEdit = document.createElement("input")
-            container.appendChild(inputEdit);
-            list.appendChild(container);
-            container.style.backgroundColor="red";
-           
+            let inputEdit = document.createElement("input");
+            list.appendChild(inputEdit);
             // Creo un boton Editar
-            let btnEditar = document.createElement("button")
-            btnEditar.innerHTML = "Editar tarea"
+            let btnEditar = document.createElement("div")
+            btnEditar.innerHTML=`<img class="papelera" src="src/img/editIcon.webp">`;
             list.appendChild(btnEditar) /// cada etiqueta li va a tener un boton editar
             //Creo un evento para el boton Editar
 
@@ -99,7 +95,7 @@ botonCrear.addEventListener("click", function () {
         } else {
             contadorE++;
             if (contadorE != 0) {
-                contadorEvento.innerHTML="Pendientes "+ +contadorE;
+                contadorEvento.innerHTML = "Pendientes " + +contadorE;
             }
             let eventoPrioridad = TareaEvento.value + " " + fechaPrioridad.value
             listaEventos.push(eventoPrioridad)
@@ -114,8 +110,9 @@ botonCrear.addEventListener("click", function () {
             list.appendChild(event)
             event.innerHTML = eventoPrioridad; //muestra el valor almacenado en tareaFecha en formato de lista (list=una nueva etiqueta li)
             /// Crea un boton Eliminar
-            let btnEliminar = document.createElement("button") // esta variable me permite crear un boton cada vez que se ejecuta el evento
-            btnEliminar.innerHTML = "Eliminar evento" // muestra el boton con su nombre
+            let btnEliminar = document.createElement("div") // esta variable me permite crear un boton cada vez que se ejecuta el evento
+            btnEliminar.innerHTML=`<img class="papelera" src="src/img/papelera.webp">`;
+            btnEliminar.className = "btnEliminar"
             list.appendChild(btnEliminar); //btn eliminar es hijo de la etiqueta list
             //Creo un evento para el boton Eliminar
             btnEliminar.addEventListener("click", function () {
@@ -130,8 +127,9 @@ botonCrear.addEventListener("click", function () {
             let inputEdit = document.createElement("input")
             list.appendChild(inputEdit);
             // Creo un boton Editar
-            let btnEditar = document.createElement("button")
-            btnEditar.innerHTML = "Editar evento"
+            let btnEditar = document.createElement("div")
+            btnEditar.innerHTML=`<img class="papelera" src="src/img/editIcon.webp">`+"Editar";
+            btnEditar.className="btnEditar"
             list.appendChild(btnEditar) /// cada etiqueta li va a tener un boton editar
             //Creo un evento para el boton Editar
             btnEditar.addEventListener("click", function () {
@@ -167,9 +165,10 @@ function traerLocalT() {
         list.appendChild(task)
         task.innerHTML = listaTareas[index]; //muestra el valor almacenado en tareaFecha en formato de lista (list=una nueva etiqueta li)
         /// Crea un boton Eliminar
-        let btnEliminar = document.createElement("button") // esta variable me permite crear un boton cada vez que se ejecuta el evento
-        btnEliminar.innerHTML = "Eliminar tarea" // muestra el boton con su nombre
-        list.appendChild(btnEliminar); //btn eliminar es hijo de la etiqueta list
+        let btnEliminar = document.createElement("div") // esta variable me permite crear un boton cada vez que se ejecuta el evento
+            btnEliminar.innerHTML=`<img class="papelera" src="src/img/papelera.webp">`;
+            btnEliminar.className = "btnEliminar"
+            list.appendChild(btnEliminar); //btn eliminar es hijo de la etiqueta list
         //Creo un evento para el boton Eliminar
         btnEliminar.addEventListener("click", function () {
 
@@ -198,8 +197,9 @@ function traerLocalT() {
         let inputEdit = document.createElement("input")
         list.appendChild(inputEdit);
         // Creo un boton Editar
-        let btnEditar = document.createElement("button")
-        btnEditar.innerHTML = "Editar tarea"
+        let btnEditar = document.createElement("div")
+        btnEditar.innerHTML=`<img class="papelera" src="src/img/editIcon.webp">`+"Editar";
+        btnEditar.className="btnEditar"
         list.appendChild(btnEditar) /// cada etiqueta li va a tener un boton editar
         //Creo un evento para el boton Editar
         btnEditar.addEventListener("click", function () {
@@ -218,11 +218,12 @@ function traerLocalT() {
 
     }
     if (contadorT != 0) {
-        contadorTask.innerHTML="Pendientes "+ +contadorT;
-    }else if (contadorT==0) {
-        contadorTask.innerHTML="No existen tareas pendientes ";
+        contadorTask.innerHTML = "Pendientes " + +contadorT;
+    } else if (contadorT == 0) {
+        contadorTask.innerHTML = "No existen tareas pendientes ";
     }
-}traerLocalT()
+}
+traerLocalT()
 
 
 
@@ -239,9 +240,10 @@ function traerLocalE() {
         list.appendChild(event)
         event.innerHTML = listaEventos[index]; //muestra el valor almacenado en tareaFecha en formato de lista (list=una nueva etiqueta li)
         /// Crea un boton Eliminar
-        let btnEliminar = document.createElement("button") // esta variable me permite crear un boton cada vez que se ejecuta el evento
-        btnEliminar.innerHTML = "Eliminar evento" // muestra el boton con su nombre
-        list.appendChild(btnEliminar); //btn eliminar es hijo de la etiqueta list
+        let btnEliminar = document.createElement("div") // esta variable me permite crear un boton cada vez que se ejecuta el evento
+            btnEliminar.innerHTML=`<img class="papelera" src="src/img/papelera.webp">`;
+            btnEliminar.className = "btnEliminar"
+            list.appendChild(btnEliminar); //btn eliminar es hijo de la etiqueta list
         //Creo un evento para el boton Eliminar
         btnEliminar.addEventListener("click", function () {
             let valores = JSON.parse(localStorage.getItem("listaEventos")) || [] ///para que se comporte como un array
@@ -255,8 +257,9 @@ function traerLocalE() {
         let inputEdit = document.createElement("input")
         list.appendChild(inputEdit);
         // Creo un boton Editar
-        let btnEditar = document.createElement("button")
-        btnEditar.innerHTML = "Editar evento"
+        let btnEditar = document.createElement("div")
+        btnEditar.innerHTML=`<img class="papelera" src="src/img/editIcon.webp">`+"Editar";
+        btnEditar.className="btnEditar"
         list.appendChild(btnEditar) /// cada etiqueta li va a tener un boton editar
         //Creo un evento para el boton Editar
         btnEditar.addEventListener("click", function () {
@@ -272,9 +275,9 @@ function traerLocalE() {
         })
     }
     if (contadorE != 0) {
-        contadorEvento.innerHTML="Pendientes "+ +contadorE;
-    }else if (contadorE==0) {
-        contadorEvento.innerHTML="No existen eventos pendientes ";
+        contadorEvento.innerHTML = "Pendientes " + +contadorE;
+    } else if (contadorE == 0) {
+        contadorEvento.innerHTML = "No existen eventos pendientes ";
     }
-}traerLocalE()
-
+}
+traerLocalE()
