@@ -10,28 +10,36 @@
 
 <body>
     <header>
-        <div>
+        <div class="contenedorLogo">
             <a href="https://www.creativelightscr.com/" target="_blank"><img src="src/img/Creative Lights.webp"
                     alt="logo"></a>
+            <p class="textlogo"> 
+                Creative Lights <br>
+                Wedding Planner</p>
+        </div>
+        <div>
+            <img class="profilePic" src="src/img/profilePic.svg" alt="profilePic">
+            <p id="userName"></p>
         </div>
     </header>
 
-
+    <div class="background">
     <h1 class="textoEncabezado">Agenda de tareas y eventos</h1>
     <br>
     <h3>Crea una nueva tarea o evento</h3> <br>
 
+    <div class="contenedorP">
     <div class="contenedorCrear">
-        <div class="entrada">
+        <div >
             <input type="text" id="TareaEvento">
             <p>Tarea o Evento</p>
             
         </div>
-        <div class="entrada">
+        <div >
             <input type="text" id="fechaPrioridad">
             <p> Fecha o Prioridad</p>
         </div>
-        <div class="entrada">
+        <div>
             <select name="Seleccione" id="selector">
                 <option value="opcion">Opciones</option>
                 <option value="tarea">Tarea</option>
@@ -43,7 +51,7 @@
 
         </div>
         <p id="textAdvert"></p>
-    </div>
+    </div></div>
 
     <br>
     <br>
@@ -58,7 +66,7 @@
             <p id="contadorE"></p>
         </div>
     </div>
-
+</div>
 
     <script src="src/js/tareas.js"></script>
 </body>

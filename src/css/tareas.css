@@ -4,18 +4,17 @@
     box-sizing: border-box;
 }
 
-
-body{
-    font-family: Fira Sans, sans-serif;
-    background-attachment: fixed;
-    background-image: -webkit-linear-gradient(45deg, #f7f2eb, #dfdae8);
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient( 174.2deg,  hsla(37, 100%, 95%, 0.9) 7.1%, hsla(105, 31%, 95%, 0.953) 66.4% );
+    min-height: 100px;
 }
 
-header {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    background-color: whitesmoke;
-    height: 120px;
+.profilePic{
+    height: 40px;
 }
 
 .textoEncabezado{
@@ -23,10 +22,22 @@ header {
     text-align: center;
 }
 
+.contenedorP{
+    display: flex;
+    justify-content: center;
+}
+
 .contenedorCrear{
-    container-type: inline-size;
-    display: grid;
-    grid-template-columns: 3fr 2fr 1fr 1fr;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    gap: 5rem;
+    width: 80%;
+    min-height: 100px;
+    background: linear-gradient( 174.2deg,  hsla(37, 100%, 95%, 0.9) 7.1%, hsla(105, 31%, 95%, 0.63) 66.4% );
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .contenedor{
@@ -34,14 +45,19 @@ header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    position: relative;
 }
+
+/*.contenedorG{
+    background-image: url(../img/libretas.jpg);
+    filter: blur(10px);
+    background-attachment: fixed;
+    background-size: cover;
+}*/
 
 @container (max-width:600px){ 
     .lista{
         grid-column: 1/-1; /* cuando la pantalla tiene menos de 600px entonces se hacen 2 filas*/
-    }
-    .entrada{
-        grid-column: 1/-1;
     }
 }
 
@@ -52,4 +68,34 @@ header {
 
 #textAdvert{
     color: red;
+}
+
+@media (max-width:600px){
+    header{
+        flex-direction: column;
+    }
+    .contenedorCrear{
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+    }
+}
+
+.contenedorLogo{
+    display: flex;
+    justify-content: center;
+}
+
+.textlogo{
+    padding-top: 10px;
+    color: rgb(125, 139, 122);
+    font-size: 20px;
+    font-family: cormorantgaramond-light, cormorantgaramond, cormorant garamond, serif;
+}
+
+.lista{
+    background: linear-gradient( 174.2deg,  hsla(37, 100%, 95%, 0.9) 7.1%, hsla(105, 31%, 95%, 0.63) 66.4% );
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }

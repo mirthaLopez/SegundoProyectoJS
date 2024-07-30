@@ -7,8 +7,9 @@ const contenedorEventos = document.getElementById("contenedorEventos")
 const textAdvert = document.getElementById("textAdvert");
 const contadorTask= document.getElementById("contadorT")
 const contadorEvento=document.getElementById("contadorE")
-let nombreUser=localStorage.getItem("name")
-console.log(nombreUser);
+const userName=document.getElementById("userName");
+let nombreUser=localStorage.getItem("name");
+userName.innerHTML=nombreUser;
 let contadorT = 0;
 let contadorE=0;
 let listaTareas = [];
