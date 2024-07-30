@@ -4,30 +4,40 @@
     box-sizing: border-box;
 }
 
+body {
+    background-image: url(../img/libretas.jpg);
+    background-attachment: fixed;
+     background-size: cover;}
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background: linear-gradient( 174.2deg,  hsla(37, 100%, 95%, 0.9) 7.1%, hsla(105, 31%, 95%, 0.953) 66.4% );
+    background: linear-gradient(174.2deg, hsla(37, 100%, 95%, 0.9) 7.1%, hsla(105, 31%, 95%, 0.953) 66.4%);
     min-height: 100px;
 }
 
-.profilePic{
+.profilePic {
     height: 40px;
 }
 
-.textoEncabezado{
-    color: rgb(125, 139, 122);
+.textoTitulo {
+    color: white;
     text-align: center;
 }
 
-.contenedorP{
+.textoEncabezado {
+    color: beige;
+    text-align: center;
+}
+
+.contenedorP {
     display: flex;
     justify-content: center;
 }
 
-.contenedorCrear{
+.contenedorCrear {
     position: relative;
     display: flex;
     justify-content: center;
@@ -35,67 +45,75 @@ header {
     gap: 5rem;
     width: 80%;
     min-height: 100px;
-    background: linear-gradient( 174.2deg,  hsla(37, 100%, 95%, 0.9) 7.1%, hsla(105, 31%, 95%, 0.63) 66.4% );
+    background: hsla(107, 7%, 51%, 0.79);
     border-radius: 10px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
-.contenedor{
-    container-type: inline-size; /*media queries: definimos contenedor*/
+.contenedor {
+    min-height: 500px;
+    min-width: 500px;
+    container-type: inline-size;
+    /*media queries: definimos contenedor*/
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 3rem;
     position: relative;
+    margin: 3rem;
 }
 
-/*.contenedorG{
-    background-image: url(../img/libretas.jpg);
-    filter: blur(10px);
-    background-attachment: fixed;
-    background-size: cover;
-}*/
 
-@container (max-width:600px){ 
-    .lista{
-        grid-column: 1/-1; /* cuando la pantalla tiene menos de 600px entonces se hacen 2 filas*/
+
+@container (max-width:600px) {
+    .lista {
+        grid-column: 1/-1;
+        /* cuando la pantalla tiene menos de 600px entonces se hacen 2 filas*/
     }
 }
 
-.contenedorLista{
+.contenedorLista {
     display: grid;
-    grid-template-columns: 4fr 1fr 1fr 1fr;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
 }
 
-#textAdvert{
+#textAdvert {
     color: red;
 }
 
-@media (max-width:600px){
-    header{
+@media (max-width:600px) {
+    header {
         flex-direction: column;
     }
-    .contenedorCrear{
+
+    .contenedorCrear {
         flex-direction: column;
         align-items: center;
         gap: 1rem;
+    }
 
+    .contenedorLista {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .contenedor{
+        min-height: fit-content;
+        min-width: fit-content;
     }
 }
 
-.contenedorLogo{
+.contenedorLogo {
     display: flex;
     justify-content: center;
 }
 
-.textlogo{
+.textlogo {
     padding-top: 10px;
     color: rgb(125, 139, 122);
     font-size: 20px;
     font-family: cormorantgaramond-light, cormorantgaramond, cormorant garamond, serif;
 }
 
-.lista{
-    background: linear-gradient( 174.2deg,  hsla(37, 100%, 95%, 0.9) 7.1%, hsla(105, 31%, 95%, 0.63) 66.4% );
+.lista {
+    background: hsla(107, 7%, 51%, 0.79);
     border-radius: 10px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }

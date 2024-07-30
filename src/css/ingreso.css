@@ -4,16 +4,38 @@
     box-sizing: border-box;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient( 174.2deg,  hsla(37, 100%, 95%, 0.9) 7.1%, hsla(105, 31%, 95%, 0.953) 66.4% );
+    min-height: 100px;
+}
+
+
 body{
    /* font-family: "Ubuntu", sans-serif;*/
 }
 
 header {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    background: linear-gradient( 174.2deg,  hsla(37, 100%, 95%, 0.9) 7.1%, hsla(105, 31%, 95%, 0.63) 66.4% );
-    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient( 174.2deg,  hsla(37, 100%, 95%, 0.9) 7.1%, hsla(105, 31%, 95%, 0.953) 66.4% );
+    min-height: 100px;
+}
+
+.textlogo{
+    padding-top: 10px;
+    color: rgb(125, 139, 122);
+    font-size: 20px;
+    font-family: cormorantgaramond-light, cormorantgaramond, cormorant garamond, serif;
+}
+.contenedorLogo{
+    display: flex;
+    justify-content: center;
 }
 
 .contenedor{

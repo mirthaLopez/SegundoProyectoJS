@@ -39,11 +39,11 @@ botonCrear.addEventListener("click", function () {
             /// creamos etiquetas li donde se almacena cada tarea
             let task = document.createElement("li") // crea una etiqueta li donde luego se almacena cada tarea
             list.appendChild(task)
-
             task.innerHTML = tareaFecha; //muestra el valor almacenado en tareaFecha en formato de lista (list=una nueva etiqueta li)
             /// Crea un boton Eliminar
             let btnEliminar = document.createElement("button") // esta variable me permite crear un boton cada vez que se ejecuta el evento
-            btnEliminar.innerHTML = "Eliminar tarea" // muestra el boton con su nombre
+            btnEliminar.innerHTML = "Eliminar" // muestra el boton con su nombre
+            btnEliminar.className="btnEliminar"
             list.appendChild(btnEliminar); //btn eliminar es hijo de la etiqueta list
             //Creo un evento para el boton Eliminar
             btnEliminar.addEventListener("click", function () {
@@ -56,8 +56,12 @@ botonCrear.addEventListener("click", function () {
             })
 
             // Creo un input para Editar
+            let container=document.createElement("div")
             let inputEdit = document.createElement("input")
-            list.appendChild(inputEdit);
+            container.appendChild(inputEdit);
+            list.appendChild(container);
+            container.style.backgroundColor="red";
+           
             // Creo un boton Editar
             let btnEditar = document.createElement("button")
             btnEditar.innerHTML = "Editar tarea"

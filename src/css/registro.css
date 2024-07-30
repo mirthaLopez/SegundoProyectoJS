@@ -1,14 +1,15 @@
 header {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    background: linear-gradient(174.2deg, hsla(37, 100%, 95%, 0.9) 7.1%, hsla(105, 31%, 95%, 0.63) 66.4%);
-    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient( 174.2deg,  hsla(37, 100%, 95%, 0.9) 7.1%, hsla(105, 31%, 95%, 0.953) 66.4% );
+    min-height: 100px;
 }
 
 .contenedorRegistro {
     width: 100%;
-    height: 600PX;
+    height: 600px;
     container-type: inline-size;
     display: flex;
     justify-content: center;
@@ -18,13 +19,13 @@ header {
 }
 
 .contenedorDatos{
+    min-width: fit-content;
+    min-height: fit-content;
     display: grid;
     grid-template-columns: 2fr 1fr;
     position: absolute;
     top: 5%;
     background: linear-gradient( 174.2deg,  hsla(37, 100%, 95%, 0.9) 7.1%, hsla(105, 31%, 95%, 0.63) 66.4% );
-    width: 600px;
-    height: 500px;
     padding: 30px;
     justify-content: center;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
@@ -38,8 +39,14 @@ header {
 
 }
 
-.moverF {
+.foto {
     display: flex;
     justify-content: end;
     padding-right: 60px;
+}
+
+@media(max-width:600px){
+    .foto{
+        display: none;
+    }
 }
