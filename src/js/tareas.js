@@ -72,26 +72,21 @@ botonCrear.addEventListener("click", function () {
                 if (validInput.length > 0) {
                     let valores = JSON.parse(localStorage.getItem("listaTareas")) || [] ///para que se comporte como un array
                     for (let index = 0; index < valores.length; index++) {
-                        console.log(valores[index]);
-                        console.log(task.textContent);
                         if (valores[index] === task.textContent) {
                             valores[index] = inputEdit.value
                             console.log(valores[index]);
                         }
                     }
-
-                    let listaAct = valores.filter(tarea => tarea != task.innerHTML)
-                    console.log(listaAct);
-                    localStorage.setItem("listaTareas", JSON.stringify(listaAct))
+                    localStorage.setItem("listaTareas", JSON.stringify(valores))
                     console.log(listaTareas);
                     task.innerHTML = inputEdit.value;
                     location.reload()
                 }
-
             })
+            console.log(task.innerHTML);
         }
 
-
+        
         
 
     } else if (selector.value == "evento") {
@@ -152,9 +147,7 @@ botonCrear.addEventListener("click", function () {
                             valores[index] = inputEdit.value;
                         }
                     }
-
-                    let listaAct = valores.filter(evento => evento != event.innerHTML)
-                    localStorage.setItem("listaEventos", JSON.stringify(listaAct))
+                    localStorage.setItem("listaEventos", JSON.stringify(valores))
                     event.innerHTML = inputEdit.value;
                     location.reload()
                 }
@@ -218,10 +211,7 @@ function traerLocalT() {
                         console.log(valores[index]);
                     }
                 }
-
-                let listaAct = valores.filter(tarea => tarea != task.innerHTML)
-                console.log(listaAct);
-                localStorage.setItem("listaTareas", JSON.stringify(listaAct))
+                localStorage.setItem("listaTareas", JSON.stringify(valores))
                 console.log(listaTareas);
                 task.innerHTML = inputEdit.value;
                 location.reload()
@@ -286,9 +276,7 @@ function traerLocalE() {
                         valores[index] = inputEdit.value;
                     }
                 }
-
-                let listaAct = valores.filter(evento => evento != event.innerHTML)
-                localStorage.setItem("listaEventos", JSON.stringify(listaAct))
+                localStorage.setItem("listaEventos", JSON.stringify(valores))
                 event.innerHTML = inputEdit.value;
                 location.reload()
             }
