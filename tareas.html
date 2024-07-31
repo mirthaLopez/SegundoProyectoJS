@@ -13,47 +13,47 @@
         <div class="contenedorLogo">
             <a href="https://www.creativelightscr.com/" target="_blank"><img src="src/img/Creative Lights.webp"
                     alt="logo"></a>
-            <p class="textlogo"> 
+            <p class="textlogo">
                 Creative Lights <br>
                 Wedding Planner</p>
         </div>
+       
         <div>
             <img class="profilePic" src="src/img/profilePic.svg" alt="profilePic">
             <p id="userName"></p>
         </div>
     </header>
 
-    <div class="contenedorG">
-        <div class="textoTitulo">
-    <h1 >Agenda de tareas y eventos</h1>
-    <br>
-    <h3 >Crea una nueva tarea o evento</h3> <br>
-</div>    
+    <div class="textoTitulo">
+        <h1>Agenda de tareas y eventos</h1>
+        <br>
+        <h3>Crea una nueva tarea o evento</h3> <br>
+    </div>
     <div class="contenedorP">
-    <div class="contenedorCrear">
-        <div >
-            <input type="text" id="TareaEvento">
-            <p>Tarea o Evento</p>
-            
-        </div>
-        <div >
-            <input type="text" id="fechaPrioridad">
-            <p> Fecha o Prioridad</p>
-        </div>
-        <div>
-            <select name="Seleccione" id="selector">
-                <option value="opcion">Opciones</option>
-                <option value="tarea">Tarea</option>
-                <option value="evento">evento</option>
-            </select>
-        </div>
-        <div class="entrada">
-            <button id="botonCrear">Crear</button>
+        <div class="contenedorCrear">
+            <div class="inputCrear">
+                <input type="text" id="TareaEvento">
+                <p>Tarea o Evento</p>
 
-        </div>
-        <p id="textAdvert"></p>
-    </div></div>
+            </div>
+            <div class="inputCrear">
+                <input type="text" id="fechaPrioridad">
+                <p> Fecha o Prioridad</p>
+            </div>
+            <div>
+                <select name="Seleccione" id="selector">
+                    <option value="opcion">Opciones</option>
+                    <option value="tarea">Tarea</option>
+                    <option value="evento">evento</option>
+                </select>
+            </div>
+            <div class="entrada">
+                <button id="botonCrear" class="botonCrear">Crear</button>
 
+            </div>
+            <p id="textAdvert"></p>
+        </div>
+    </div>
     <br>
     <br>
 
@@ -67,7 +67,14 @@
             <p id="contadorE"></p>
         </div>
     </div>
-</div>
+
+    <footer>
+        <div>
+            <a href="https://www.facebook.com/eventoscreativelightscr" target="_blank"><img class="tamanoIcon" src="src/img/face.webp" alt="face"></a>
+            <a href="https://www.instagram.com/creativelightsweddingplanner/" target="_blank"><img class="tamanoIcon" src="src/img/insta.webp" alt="insta"></a>
+        </div>
+    </footer>
+
 
 
     <script src="src/js/tareas.js"></script>

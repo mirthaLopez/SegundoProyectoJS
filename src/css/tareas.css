@@ -4,8 +4,36 @@
     box-sizing: border-box;
 }
 
+.botonCrear {
+  border-radius: 4px;
+  background-color: hsla(120, 26%, 29%, 0.844);
+  border: none;
+  color: beige;
+  text-align: center;
+  font-size: 15px;
+  padding: 5px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.botonCrear:hover{
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+input,
+select{
+    border-radius: 5px;
+    border: solid rgb(55, 94, 55)  ;
+    background-color:whitesmoke;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1)
+}
+
+.inputCrear{
+    text-align: center;
+}
+
 body{
-    background-image: url(../img/flores3.jpg);
+    background-image: url(../img/2150166796.jpg);
     background-attachment: fixed;
     background-size: cover;
 }
@@ -24,14 +52,17 @@ header {
 }
 
 .textoTitulo {
-    margin-top: 30px;
-    color: rgb(55, 94, 55);
+    font-family: cormorantgaramond-light, cormorantgaramond, cormorant garamond, serif;
+    margin-top: 40px;
+    font-weight: 100;
+    color: rgba(3, 71, 3, 0.861);
     text-align: center;
     font-weight: bolder;
+    margin-bottom: 30px;
 }
 
 .textoEncabezado {
-    color: beige;
+    color: blanchedalmond;
     text-align: center;
 }
 
@@ -48,7 +79,7 @@ header {
     gap: 5rem;
     width: 80%;
     min-height: 100px;
-    background: hsla(107, 7%, 51%, 0.79);
+    background: hsla(108, 6%, 53%, 0.651);
     border-radius: 10px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
@@ -57,7 +88,6 @@ header {
     min-height: 500px;
     min-width: 500px;
     container-type: inline-size;
-    /*media queries: definimos contenedor*/
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
@@ -65,7 +95,15 @@ header {
     margin: 3rem;
 }
 
+#contadorT,
+#contadorE{
+    text-align: center;
+    margin-bottom: 20px;
+}
 
+.tarea{
+    margin-left: 20px;
+}
 
 @container (max-width:600px) {
     .lista {
@@ -76,7 +114,9 @@ header {
 
 .contenedorLista {
     display: grid;
-    grid-template-columns: 5fr 1fr 1fr 1fr;
+    grid-template-columns: 6fr 1fr 1fr 1fr;
+    font-weight: 600;
+    margin-bottom: 30px;
 }
 
 #textAdvert {
@@ -116,14 +156,14 @@ header {
 }
 
 .lista {
-    background: hsla(107, 7%, 51%, 0.79);
+    background: hsla(108, 6%, 53%, 0.651);
     border-radius: 10px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .papelera{
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
 }
 
 .btnEliminar{
@@ -133,6 +173,24 @@ header {
 
 .btnEditar{
     display: flex;
-    flex-direction: column;
-    justify-content: left;
+    justify-content: space-around;
 }
+
+.inputEdit{
+    margin-left: 15px;
+    height: 75%;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    min-height: 100px;
+    background: linear-gradient(174.2deg, hsla(37, 100%, 95%, 0.9) 7.1%, hsl(105, 31%, 95%) 66.4%);
+}
+
+.tamanoIcon{
+    width: 30px;
+    height: 30px;
+}
+

@@ -38,11 +38,12 @@ botonCrear.addEventListener("click", function () {
 
             /// creamos etiquetas li donde se almacena cada tarea
             let task = document.createElement("li") // crea una etiqueta li donde luego se almacena cada tarea
-            list.appendChild(task)
+            list.appendChild(task);
+            task.className="tarea"
             task.innerHTML = tareaFecha; //muestra el valor almacenado en tareaFecha en formato de lista (list=una nueva etiqueta li)
             /// Crea un boton Eliminar
             let btnEliminar = document.createElement("div") // esta variable me permite crear un boton cada vez que se ejecuta el evento
-            btnEliminar.innerHTML=`<img class="papelera" src="src/img/papelera.webp">`;
+            btnEliminar.innerHTML = `<img class="papelera" src="src/img/papelera.webp">`;
             btnEliminar.className = "btnEliminar"
             list.appendChild(btnEliminar); //btn eliminar es hijo de la etiqueta list
             //Creo un evento para el boton Eliminar
@@ -58,33 +59,40 @@ botonCrear.addEventListener("click", function () {
             // Creo un input para Editar
             let inputEdit = document.createElement("input");
             list.appendChild(inputEdit);
+            inputEdit.className="inputEdit"
             // Creo un boton Editar
             let btnEditar = document.createElement("div")
-            btnEditar.innerHTML=`<img class="papelera" src="src/img/editIcon.webp">`;
-            list.appendChild(btnEditar) /// cada etiqueta li va a tener un boton editar
+            btnEditar.innerHTML = `<img class="papelera" src="src/img/editIcon.webp">`;
+            btnEditar.className = "btnEditar"
+            list.appendChild(btnEditar)/// cada etiqueta li va a tener un boton editar
             //Creo un evento para el boton Editar
 
             btnEditar.addEventListener("click", function () {
-                let valores = JSON.parse(localStorage.getItem("listaTareas")) || [] ///para que se comporte como un array
-                for (let index = 0; index < valores.length; index++) {
-                    console.log(valores[index]);
-                    console.log(task.textContent);
-                    if (valores[index] === task.textContent) {
-                        valores[index] = inputEdit.value
+                let validInput=inputEdit.value.trim();
+                if (validInput.length > 0) {
+                    let valores = JSON.parse(localStorage.getItem("listaTareas")) || [] ///para que se comporte como un array
+                    for (let index = 0; index < valores.length; index++) {
                         console.log(valores[index]);
+                        console.log(task.textContent);
+                        if (valores[index] === task.textContent) {
+                            valores[index] = inputEdit.value
+                            console.log(valores[index]);
+                        }
                     }
-                }
 
-                let listaAct = valores.filter(tarea => tarea != task.innerHTML)
-                console.log(listaAct);
-                localStorage.setItem("listaTareas", JSON.stringify(listaAct))
-                console.log(listaTareas);
-                task.innerHTML = inputEdit.value;
-                location.reload()
+                    let listaAct = valores.filter(tarea => tarea != task.innerHTML)
+                    console.log(listaAct);
+                    localStorage.setItem("listaTareas", JSON.stringify(listaAct))
+                    console.log(listaTareas);
+                    task.innerHTML = inputEdit.value;
+                    location.reload()
+                }
 
             })
         }
 
+
+        
 
     } else if (selector.value == "evento") {
         let validador = TareaEvento.value.trim();
@@ -108,10 +116,11 @@ botonCrear.addEventListener("click", function () {
             /// creamos etiquetas li donde se almacena cada tarea
             let event = document.createElement("li") // crea una etiqueta li donde luego se almacena cada tarea
             list.appendChild(event)
+            event.className="tarea";
             event.innerHTML = eventoPrioridad; //muestra el valor almacenado en tareaFecha en formato de lista (list=una nueva etiqueta li)
             /// Crea un boton Eliminar
             let btnEliminar = document.createElement("div") // esta variable me permite crear un boton cada vez que se ejecuta el evento
-            btnEliminar.innerHTML=`<img class="papelera" src="src/img/papelera.webp">`;
+            btnEliminar.innerHTML = `<img class="papelera" src="src/img/papelera.webp">`;
             btnEliminar.className = "btnEliminar"
             list.appendChild(btnEliminar); //btn eliminar es hijo de la etiqueta list
             //Creo un evento para el boton Eliminar
@@ -126,21 +135,29 @@ botonCrear.addEventListener("click", function () {
             // Creo un input para Editar
             let inputEdit = document.createElement("input")
             list.appendChild(inputEdit);
+            inputEdit.className="inputEdit"
+
             // Creo un boton Editar
             let btnEditar = document.createElement("div")
-            btnEditar.innerHTML=`<img class="papelera" src="src/img/editIcon.webp">`+"Editar";
-            btnEditar.className="btnEditar"
+            btnEditar.innerHTML = `<img class="papelera" src="src/img/editIcon.webp">`;
+            btnEditar.className = "btnEditar"
             list.appendChild(btnEditar) /// cada etiqueta li va a tener un boton editar
             //Creo un evento para el boton Editar
             btnEditar.addEventListener("click", function () {
-                for (let index = 0; index < listaEventos.length; index++) {
-                    if (listaEventos[index] === event.textContent) {
-                        listaEventos[index] = inputEdit.value
+                let validInput=inputEdit.value.trim();
+                if (validInput.length > 0) {
+                    let valores = JSON.parse(localStorage.getItem("listaEventos")) || [] ///para que se comporte como un array
+                    for (let index = 0; index < valores.length; index++) {
+                        if (valores[index] === event.textContent) {
+                            valores[index] = inputEdit.value;
+                        }
                     }
+
+                    let listaAct = valores.filter(evento => evento != event.innerHTML)
+                    localStorage.setItem("listaEventos", JSON.stringify(listaAct))
+                    event.innerHTML = inputEdit.value;
+                    location.reload()
                 }
-                let listaActualizada = listaEventos.filter(evento => evento != event.innerHTML)
-                localStorage.setItem("listaEventos", JSON.stringify(listaActualizada))
-                event.innerHTML = inputEdit.value;
 
             })
         }
@@ -163,57 +180,52 @@ function traerLocalT() {
         /// creamos etiquetas li donde se almacena cada tarea
         let task = document.createElement("li") // crea una etiqueta li donde luego se almacena cada tarea
         list.appendChild(task)
+        task.className="tarea"
         task.innerHTML = listaTareas[index]; //muestra el valor almacenado en tareaFecha en formato de lista (list=una nueva etiqueta li)
         /// Crea un boton Eliminar
         let btnEliminar = document.createElement("div") // esta variable me permite crear un boton cada vez que se ejecuta el evento
-            btnEliminar.innerHTML=`<img class="papelera" src="src/img/papelera.webp">`;
+            btnEliminar.innerHTML = `<img class="papelera" src="src/img/papelera.webp">`;
             btnEliminar.className = "btnEliminar"
             list.appendChild(btnEliminar); //btn eliminar es hijo de la etiqueta list
         //Creo un evento para el boton Eliminar
         btnEliminar.addEventListener("click", function () {
-
             let valores = JSON.parse(localStorage.getItem("listaTareas")) || [] ///para que se comporte como un array
-
-            console.log("LOCAL STORAGE", valores);
-
-            console.log("ESTE ES EL TASK ", task.textContent);
-
             const listaActualizada = valores.filter(tarea => tarea != task.textContent);
-
-
-            console.log("ESTA ES LA LISTA ACTUALIZADA", listaActualizada);
             list.remove()
             localStorage.setItem("listaTareas", JSON.stringify(listaActualizada))
             contadorT--;
             location.reload()
         })
-        let taskList = JSON.parse(localStorage.getItem("listaTareas")) || []
-
-        if (taskList.length === 0) {
-            localStorage.removeItem("listaTareas")
-        }
-
         // Creo un input para Editar
         let inputEdit = document.createElement("input")
         list.appendChild(inputEdit);
+        inputEdit.className="inputEdit"
         // Creo un boton Editar
         let btnEditar = document.createElement("div")
-        btnEditar.innerHTML=`<img class="papelera" src="src/img/editIcon.webp">`+"Editar";
-        btnEditar.className="btnEditar"
-        list.appendChild(btnEditar) /// cada etiqueta li va a tener un boton editar
+            btnEditar.innerHTML = `<img class="papelera" src="src/img/editIcon.webp">`;
+            btnEditar.className = "btnEditar"
+            list.appendChild(btnEditar) /// cada etiqueta li va a tener un boton editar
         //Creo un evento para el boton Editar
         btnEditar.addEventListener("click", function () {
-            for (let index = 0; index < listaTareas.length; index++) {
-                if (listaTareas[index] === task.textContent) {
-                    listaTareas[index] = inputEdit.value
-                    console.log(listaTareas[index]);
+            let validInput=inputEdit.value.trim();
+            if (validInput.length > 0){
+                let valores = JSON.parse(localStorage.getItem("listaTareas")) || [] ///para que se comporte como un array
+                for (let index = 0; index < valores.length; index++) {
+                    console.log(valores[index]);
+                    console.log(task.textContent);
+                    if (valores[index] === task.textContent) {
+                        valores[index] = inputEdit.value
+                        console.log(valores[index]);
+                    }
                 }
-            }
 
-            let listaActualizada = listaTareas.filter(tarea => tarea != task.innerHTML)
-            localStorage.setItem("listaTareas", JSON.stringify(listaActualizada))
-            task.innerHTML = inputEdit.value;
-            location.reload()
+                let listaAct = valores.filter(tarea => tarea != task.innerHTML)
+                console.log(listaAct);
+                localStorage.setItem("listaTareas", JSON.stringify(listaAct))
+                console.log(listaTareas);
+                task.innerHTML = inputEdit.value;
+                location.reload()
+            }
         })
 
     }
@@ -238,12 +250,13 @@ function traerLocalE() {
         /// creamos etiquetas li donde se almacena cada tarea
         let event = document.createElement("li") // crea una etiqueta li donde luego se almacena cada tarea
         list.appendChild(event)
+        event.className="tarea";
         event.innerHTML = listaEventos[index]; //muestra el valor almacenado en tareaFecha en formato de lista (list=una nueva etiqueta li)
         /// Crea un boton Eliminar
         let btnEliminar = document.createElement("div") // esta variable me permite crear un boton cada vez que se ejecuta el evento
-            btnEliminar.innerHTML=`<img class="papelera" src="src/img/papelera.webp">`;
-            btnEliminar.className = "btnEliminar"
-            list.appendChild(btnEliminar); //btn eliminar es hijo de la etiqueta list
+        btnEliminar.innerHTML = `<img class="papelera" src="src/img/papelera.webp">`;
+        btnEliminar.className = "btnEliminar"
+        list.appendChild(btnEliminar); //btn eliminar es hijo de la etiqueta list
         //Creo un evento para el boton Eliminar
         btnEliminar.addEventListener("click", function () {
             let valores = JSON.parse(localStorage.getItem("listaEventos")) || [] ///para que se comporte como un array
@@ -256,22 +269,29 @@ function traerLocalE() {
         // Creo un input para Editar
         let inputEdit = document.createElement("input")
         list.appendChild(inputEdit);
+        inputEdit.className="inputEdit"
+
         // Creo un boton Editar
         let btnEditar = document.createElement("div")
-        btnEditar.innerHTML=`<img class="papelera" src="src/img/editIcon.webp">`+"Editar";
-        btnEditar.className="btnEditar"
-        list.appendChild(btnEditar) /// cada etiqueta li va a tener un boton editar
+        btnEditar.innerHTML = `<img class="papelera" src="src/img/editIcon.webp">`;
+        btnEditar.className = "btnEditar"
+        list.appendChild(btnEditar)/// cada etiqueta li va a tener un boton editar
         //Creo un evento para el boton Editar
         btnEditar.addEventListener("click", function () {
-            for (let index = 0; index < listaEventos.length; index++) {
-                if (listaEventos[index] === event.textContent) {
-                    listaEventos[index] = inputEdit.value
+            let validInput=inputEdit.value.trim();
+            if (validInput.length > 0) {
+                let valores = JSON.parse(localStorage.getItem("listaEventos")) || [] ///para que se comporte como un array
+                for (let index = 0; index < valores.length; index++) {
+                    if (valores[index] === event.textContent) {
+                        valores[index] = inputEdit.value;
+                    }
                 }
-            }
-            let listaActualizada = listaEventos.filter(evento => evento != event.innerHTML)
-            localStorage.setItem("listaEventos", JSON.stringify(listaActualizada))
-            event.innerHTML = inputEdit.value;
 
+                let listaAct = valores.filter(evento => evento != event.innerHTML)
+                localStorage.setItem("listaEventos", JSON.stringify(listaAct))
+                event.innerHTML = inputEdit.value;
+                location.reload()
+            }
         })
     }
     if (contadorE != 0) {
