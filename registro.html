@@ -1,44 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
     <link rel="stylesheet" href="src/css/registro.css">
 </head>
+
 <body>
- <header>
-    <div>
-        <a href="https://www.creativelightscr.com/" target="_blank"><img src="src/img/Creative Lights.webp" alt="logo"></a>
-    </div>
- </header>
-
- <main>
-    <div class="contenedorRegistro">
-        <div class="contenedorDatos">
-        <div class="foto">
-            <img class="tamanoFoto" src="src/img/Couple.jpg" alt="bodaPlaya">
+    <header>
+        <div>
+            <a href="https://www.creativelightscr.com/" target="_blank"><img src="src/img/Creative Lights.webp"
+                    alt="logo"></a>
         </div>
-        <div class="registro">
-            <p>Nombre</p>
-    <input type="text" id="nombre">
-    <p>Correo Electrónico</p>
-    <input type="text" id="correo">
-    <p>Contraseña</p>
-    <input type="text" id="contraseña"> <br><br>
+    </header>
 
-    <button id="boton">Enviar datos</button>
-    <h2 id="textBienvenida"></h2> <br>
-    <p>_________ ó__________</p> <br>
-    <button><a href="ingreso.html">Inicia sesión en mi cuenta</a></button>
-</div>
-</div>
-</div>
+        <div class="contenedorRegistro">
+            <div class="contenedorDatos">
+                <div class="foto">
+                    <img class="tamanoFoto" src="src/img/Couple.jpg" alt="bodaPlaya">
+                </div>
+                <div class="registro">
+                    <p>Nombre</p>
+                    <input type="text" id="nombre">
+                    <p>Correo Electrónico</p>
+                    <input type="text" id="correo">
+                    <p>Contraseña</p>
+                    <input type="text" id="contraseña"> <br><br>
 
- </main>
-    
-
+                    <button id="boton" class="btnEnviar">Enviar datos</button>
+                    <div class="textBienvenida">
+                        <p id="textBienvenida"></p>
+                    </div>
+                    <p>_________ ó__________</p> <br>
+                    <button><a href="ingreso.html" class="btnIngreso">Inicia sesión en tu cuenta</a></button>
+                </div>
+            </div>
+        </div>
+ 
+    <footer>
+        <div>
+            <a href="https://www.facebook.com/eventoscreativelightscr" target="_blank"><img class="tamanoIcon" src="src/img/face.webp" alt="face"></a>
+            <a href="https://www.instagram.com/creativelightsweddingplanner/" target="_blank"><img class="tamanoIcon" src="src/img/insta.webp" alt="insta"></a>
+        </div>
+    </footer>
 
     <script src="src/js/registro.js"></script>
 </body>
+
 </html>

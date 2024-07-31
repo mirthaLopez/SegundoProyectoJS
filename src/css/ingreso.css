@@ -9,7 +9,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background: linear-gradient( 174.2deg,  hsla(37, 100%, 95%, 0.9) 7.1%, hsla(105, 31%, 95%, 0.953) 66.4% );
+    background: linear-gradient(174.2deg, hsla(37, 100%, 95%, 0.9) 7.1%, hsla(105, 31%, 95%, 0.953) 66.4%);
     min-height: 100px;
 }
 
@@ -19,45 +19,87 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background: linear-gradient( 174.2deg,  hsla(37, 100%, 95%, 0.9) 7.1%, hsla(105, 31%, 95%, 0.953) 66.4% );
+    background: linear-gradient(174.2deg, hsla(37, 100%, 95%, 0.9) 7.1%, hsla(105, 31%, 95%, 0.953) 66.4%);
     min-height: 100px;
 }
 
-.textlogo{
+.textlogo {
     padding-top: 10px;
     color: rgb(125, 139, 122);
     font-size: 20px;
     font-family: cormorantgaramond-light, cormorantgaramond, cormorant garamond, serif;
 }
-.contenedorLogo{
+
+.contenedorLogo {
     display: flex;
     justify-content: center;
 }
 
-.contenedor{
-    width: 100%;
-    height: 500PX;
-    container-type: inline-size;
-    display: flex;
-    justify-content: center;
+body{
     background-image: url(../img/libretas.jpg);
     background-size: cover;
 }
-.contenedorDatos{
-    position: absolute;
-    top: 25%;
-    background: linear-gradient( 174.2deg,  hsla(37, 100%, 95%, 0.9) 7.1%, hsla(105, 31%, 95%, 0.63) 66.4% );
-    width: 300px;
-    height: 300px;
-    padding: 40px;
-    display: grid;
-    grid-template-rows: 1fr ;
+.contenedor {
+    width: 100%;
+    height: 720px;
+    container-type: inline-size;
+    display: flex;
     justify-content: center;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
-@container (min-width: 769px) {
-    .contenedorDatos {
-    
-    }
-    }
+.contenedorDatos {
+    position: absolute;
+    top: 15%;
+    color: rgb(55, 94, 55);
+    background: linear-gradient(174.2deg, hsla(37, 100%, 95%, 0.9) 7.1%, hsla(105, 31%, 95%, 0.63) 66.4%);
+    width: 300px;
+    height: 400px;
+    padding: 40px;
+    display: grid;
+    grid-template-rows: 1fr;
+    text-align: center;
+    justify-content: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    border-radius: 5px;
+}
+
+button {
+    border-radius: 4px;
+    background-color: hsla(120, 26%, 29%, 0.844);
+    border: none;
+    color: beige;
+    text-align: center;
+    font-size: 15px;
+    padding: 5px;
+    min-width: fit-content;
+    cursor: pointer;
+}
+
+button:hover {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+input {
+    border-radius: 5px;
+    border: solid rgb(55, 94, 55);
+    background-color: whitesmoke;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1)
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    min-height: 100px;
+    background: linear-gradient(174.2deg, hsla(37, 100%, 95%, 0.9) 7.1%, hsl(105, 31%, 95%) 66.4%);
+}
+
+.tamanoIcon {
+    width: 30px;
+    height: 30px;
+}
+
+.textoBienvenida{
+    min-height: fit-content;
+    min-width: fit-content;
+}

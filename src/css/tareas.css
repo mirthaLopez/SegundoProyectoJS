@@ -194,3 +194,7 @@ footer{
     height: 30px;
 }
 
+.user{
+    color: rgb(125, 139, 122);
+    font-size: larger;
+}
